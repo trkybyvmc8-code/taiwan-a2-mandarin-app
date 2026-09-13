@@ -16,6 +16,7 @@ body {
     line-height: 1.5;
 }
 
+/* Hide screens when .hidden is applied */
 .hidden {
     display: none !important;
 }
@@ -26,6 +27,7 @@ body {
     margin: 0 auto;
 }
 
+/* Onboarding uses .active to show initially */
 .screen.active {
     display: block;
 }
@@ -383,6 +385,7 @@ p {
     font-size: 14px;
     color: #777;
 }
+
 /* ============================
    Import Screen
    ============================ */
@@ -408,6 +411,48 @@ p {
     margin-bottom: 20px;
     font-size: 18px;
 }
+
+/* ============================
+   Screen Transitions
+   ============================ */
+
+.screen {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.screen:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ============================
+   Bottom Navigation Bar
+   ============================ */
+
+#bottomNav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    z-index: 999; /* stays above screens */
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 6px 0;
+}
+
 
 /* ============================
    Responsive Design

@@ -178,6 +178,37 @@ document.getElementById("navReset").addEventListener("click", () => {
     closeNav();
     showScreen("reset");
 });
+
+document.getElementById("openSettings").addEventListener("click", () => {
+    showScreen("settingsScreen");
+});
+
+document.getElementById("menuContinueBtn").addEventListener("click", () => {
+    startStudySession();
+    showScreen("studyScreen");
+});
+
+
+/* ------------------------------
+   Menu → Settings Navigation
+   ------------------------------ */
+
+document.getElementById("menuSettingsBtn").addEventListener("click", () => {
+    showScreen("settingsScreen");
+});
+
+document.getElementById("settingsBackBtn").addEventListener("click", () => {
+    showScreen("menu");
+});
+
+document.querySelectorAll("#bottomNav .nav-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const target = btn.dataset.target;
+        showScreen(target);
+    });
+});
+
+
 /* ============================================
    Spaced Repetition Engine
    ============================================ */
@@ -651,3 +682,12 @@ document.getElementById("resetBack").addEventListener("click", () => {
    ------------------------------ */
 
 showScreen("onboarding");
+
+/* ------------------------------
+   PWA — Service Worker Registration
+   ------------------------------ */
+
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+}
+

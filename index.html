@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taiwan A2 Mandarin Study</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
@@ -25,12 +26,12 @@
     <section id="studyScreen" class="screen hidden">
         <header class="top-bar">
             <div id="sessionInfo">Loading session…</div>
-            <button id="goToMenu" class="menu-btn">☰</button>
+            <button id="openSettings" class="menu-btn">⚙️</button>
+
         </header>
 
         <div id="studyContent">
             <div id="targetWord" class="big-chinese"></div>
-
             <div id="exampleSentence" class="example-sentence"></div>
 
             <div id="clueBox" class="clue-box hidden"></div>
@@ -55,15 +56,16 @@
     </section>
 
     <!-- Menu Screen -->
-    <section id="menuScreen" class="screen hidden">
-        <h2>Menu</h2>
-        <button class="menu-item" id="menuStudy">Study</button>
-        <button class="menu-item" id="menuProgress">Progress</button>
-        <button class="menu-item" id="menuDeck">Vocabulary Deck</button>
-        <button class="menu-item" id="menuImport">Import Progress</button>
-        <button class="menu-item" id="menuExport">Export Progress</button>
-        <button class="menu-item danger" id="menuReset">Reset Progress</button>
-        <button class="menu-item" id="menuBack">Back</button>
+    <section id="menu" class="screen hidden">
+        <h1>Main Menu</h1>
+
+        <button class="primary-btn" id="menuStudyBtn">Start Studying</button>
+        <button class="primary-btn" id="menuContinueBtn">Continue Studying</button>
+        <button class="primary-btn" id="menuDeckBtn">Browse Deck</button>
+        <button class="primary-btn" id="menuProgressBtn">Progress Dashboard</button>
+        <button class="primary-btn" id="menuTroubleBtn">Trouble Words</button>
+
+        <button class="secondary-btn" id="menuSettingsBtn">Settings</button>
     </section>
 
     <!-- Progress Screen -->
@@ -93,18 +95,36 @@
         <h2>Vocabulary Deck</h2>
 
         <input id="deckSearch" type="text" placeholder="Search Traditional, pinyin, or English…">
-
         <div id="deckList" class="deck-list"></div>
 
         <button class="menu-item" id="deckBack">Back</button>
+    </section>
+
+    <!-- Settings Screen -->
+    <section id="settingsScreen" class="screen hidden">
+        <h1>Settings</h1>
+
+        <button class="secondary-btn" id="settingsImportBtn">Import Progress</button>
+        <button class="secondary-btn" id="settingsExportBtn">Export Progress</button>
+        <button class="danger-btn" id="resetBtn">Reset Progress</button>
+
+        <button class="menu-btn" id="settingsBackBtn">Back to Menu</button>
     </section>
 
     <!-- Import Screen -->
     <section id="importScreen" class="screen hidden">
         <h2>Import Progress</h2>
         <input type="file" id="importFile">
-        <button id="importBtn" class="primary-btn">Import</button>
+        <button id="importConfirmBtn" class="primary-btn">Import</button>
         <button class="menu-item" id="importBack">Back</button>
+    </section>
+
+    <!-- Export Screen -->
+    <section id="exportScreen" class="screen hidden">
+        <h2>Export Progress</h2>
+        <p>Your study data will be downloaded as a JSON file.</p>
+        <button id="exportConfirmBtn" class="primary-btn">Download Progress</button>
+        <button class="menu-item" id="exportBack">Back</button>
     </section>
 
     <!-- Reset Confirmation -->
@@ -112,13 +132,20 @@
         <h2>Reset Progress</h2>
         <p>This will erase all your study data. Are you sure?</p>
         <button id="confirmReset" class="danger-btn">Yes, reset everything</button>
-        <button id="resetBack" class="menu-item">Cancel</button>
+        <button class="menu-item" id="resetBack">Cancel</button>
     </section>
+
+<!-- Bottom Navigation -->
+    <nav id="bottomNav">
+        <button class="nav-btn" data-target="menu">🏠</button>
+        <button class="nav-btn" data-target="studyScreen">📘</button>
+        <button class="nav-btn" data-target="deckScreen">📚</button>
+        <button class="nav-btn" data-target="progressScreen">📊</button>
+        <button class="nav-btn" data-target="settingsScreen">⚙️</button>
+    </nav>
 
 </div>
 
-</body>
-</html>
 <!-- Navigation Overlay -->
 <div id="navOverlay" class="overlay hidden">
     <div class="overlay-content">
@@ -132,14 +159,6 @@
     </div>
 </div>
 
-<!-- Export Screen -->
-<section id="exportScreen" class="screen hidden">
-    <h2>Export Progress</h2>
-    <p>Your study data will be downloaded as a JSON file.</p>
-    <button id="exportBtn" class="primary-btn">Download Progress</button>
-    <button class="menu-item" id="exportBack">Back</button>
-</section>
-
 <!-- Hidden download link -->
 <a id="downloadLink" style="display:none;"></a>
 
@@ -152,7 +171,8 @@
 <footer id="footer">
     <p>Traditional Chinese • Taiwan A2 Level • Spaced Repetition</p>
 </footer>
-<!-- Modal for messages -->
+
+<!-- Modal -->
 <div id="modal" class="modal hidden">
     <div class="modal-content">
         <p id="modalText"></p>
@@ -160,7 +180,7 @@
     </div>
 </div>
 
-<!-- Hidden templates (used by JS) -->
+<!-- Templates -->
 <template id="deckItemTemplate">
     <div class="deck-item">
         <div class="deck-chinese"></div>
@@ -182,7 +202,6 @@
 
 <script src="data.js" defer></script>
 <script src="app.js" defer></script>
+
 </body>
 </html>
-
-

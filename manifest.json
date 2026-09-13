@@ -1,0 +1,9 @@
+{
+  "name": "Taiwan A2 Mandarin",
+  "short_name": "A2 Mandarin",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#007aff",
+  "icons": []
+}
