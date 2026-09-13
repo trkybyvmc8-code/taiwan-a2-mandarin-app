@@ -625,14 +625,14 @@ document.getElementById("menuContinueBtn").addEventListener("click", () => {
     showScreen("studyScreen");
 });
 
-document.getElementById("menuProgressBtn").addEventListener("click", () => {
-    loadProgressScreen();
-    showScreen("progressScreen");
-});
-
 document.getElementById("menuDeckBtn").addEventListener("click", () => {
     loadDeckScreen();
     showScreen("deckScreen");
+});
+
+document.getElementById("menuProgressBtn").addEventListener("click", () => {
+    loadProgressScreen();
+    showScreen("progressScreen");
 });
 
 document.getElementById("menuTroubleBtn").addEventListener("click", () => {
