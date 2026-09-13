@@ -571,7 +571,7 @@ document.getElementById("importBtn").addEventListener("click", () => {
    Export Progress
    ------------------------------ */
 
-document.getElementById("importConfirmBtn").addEventListener("click", () => {
+document.getElementById("exportConfirmBtn").addEventListener("click", () => {
     const blob = new Blob([JSON.stringify(progress)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
 
