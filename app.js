@@ -571,7 +571,7 @@ document.getElementById("importBtn").addEventListener("click", () => {
    Export Progress
    ------------------------------ */
 
-document.getElementById("exportBtn").addEventListener("click", () => {
+document.getElementById("importConfirmBtn").addEventListener("click", () => {
     const blob = new Blob([JSON.stringify(progress)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
 
@@ -615,35 +615,34 @@ document.getElementById("startOnboardingBtn").addEventListener("click", () => {
    Menu Buttons
    ------------------------------ */
 
-document.getElementById("menuStudy").addEventListener("click", () => {
+document.getElementById("menuStudyBtn").addEventListener("click", () => {
     startStudySession();
+    showScreen("studyScreen");
 });
 
-document.getElementById("menuProgress").addEventListener("click", () => {
+document.getElementById("menuContinueBtn").addEventListener("click", () => {
+    startStudySession();
+    showScreen("studyScreen");
+});
+
+document.getElementById("menuProgressBtn").addEventListener("click", () => {
     loadProgressScreen();
-    showScreen("progress");
+    showScreen("progressScreen");
 });
 
-document.getElementById("menuDeck").addEventListener("click", () => {
+document.getElementById("menuDeckBtn").addEventListener("click", () => {
     loadDeckScreen();
-    showScreen("deck");
+    showScreen("deckScreen");
 });
 
-document.getElementById("menuImport").addEventListener("click", () => {
-    showScreen("import");
+document.getElementById("menuTroubleBtn").addEventListener("click", () => {
+    showScreen("troubleScreen");
 });
 
-document.getElementById("menuExport").addEventListener("click", () => {
-    showScreen("export");
+document.getElementById("menuSettingsBtn").addEventListener("click", () => {
+    showScreen("settingsScreen");
 });
 
-document.getElementById("menuReset").addEventListener("click", () => {
-    showScreen("reset");
-});
-
-document.getElementById("menuBack").addEventListener("click", () => {
-    showScreen("menu");
-});
 
 /* ------------------------------
    Deck Back Button
