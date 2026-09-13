@@ -143,42 +143,6 @@ function incrementDaily() {
    Event Bindings — Navigation
    ------------------------------ */
 
-document.getElementById("goToMenu").addEventListener("click", openNav);
-
-document.getElementById("navClose").addEventListener("click", closeNav);
-
-document.getElementById("navStudy").addEventListener("click", () => {
-    closeNav();
-    startStudySession();
-});
-
-document.getElementById("navProgress").addEventListener("click", () => {
-    closeNav();
-    loadProgressScreen();
-    showScreen("progress");
-});
-
-document.getElementById("navDeck").addEventListener("click", () => {
-    closeNav();
-    loadDeckScreen();
-    showScreen("deck");
-});
-
-document.getElementById("navImport").addEventListener("click", () => {
-    closeNav();
-    showScreen("import");
-});
-
-document.getElementById("navExport").addEventListener("click", () => {
-    closeNav();
-    showScreen("export");
-});
-
-document.getElementById("navReset").addEventListener("click", () => {
-    closeNav();
-    showScreen("reset");
-});
-
 document.getElementById("openSettings").addEventListener("click", () => {
     showScreen("settingsScreen");
 });
