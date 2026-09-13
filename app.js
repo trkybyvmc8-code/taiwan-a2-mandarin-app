@@ -67,23 +67,46 @@ function hideSpinner() {
     spinner.classList.add("hidden");
 }
 
-/* ------------------------------
-   Local Storage Helpers
+/* Persistent Storage (IndexedDB)
    ------------------------------ */
 
-function saveProgress(data) {
-    localStorage.setItem("taiwanA2Progress", JSON.stringify(data));
+async function openDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open("TaiwanA2MandarinDB", 1);
+
+        request.onupgradeneeded = () => {
+            const db = request.result;
+            if (!db.objectStoreNames.contains("progressStore")) {
+                db.createObjectStore("progressStore");
+            }
+        };
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
 }
 
-function loadProgress() {
-    const raw = localStorage.getItem("taiwanA2Progress");
-    if (!raw) return null;
-    try {
-        return JSON.parse(raw);
-    } catch {
-        return null;
-    }
+async function saveProgress(data) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction("progressStore", "readwrite");
+        tx.objectStore("progressStore").put(data, "taiwanA2Progress");
+        tx.oncomplete = () => resolve(true);
+        tx.onerror = () => reject(tx.error);
+    });
 }
+
+async function loadProgress() {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction("progressStore", "readonly");
+        const request = tx.objectStore("progressStore").get("taiwanA2Progress");
+
+        request.onsuccess = () => resolve(request.result || null);
+        request.onerror = () => reject(request.error);
+    });
+}
+
 
 /* ------------------------------
    Global State
