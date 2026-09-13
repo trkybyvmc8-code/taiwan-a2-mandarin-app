@@ -174,6 +174,7 @@ const intervals = {
    ------------------------------ */
 
 function ensureItemProgress(id) {
+    if (!progress.items) progress.items = {};
     if (!progress.items[id]) {
         progress.items[id] = {
             lastReview: 0,
@@ -502,7 +503,13 @@ document.getElementById("importConfirmBtn").addEventListener("click", () => {
     reader.onload = () => {
         try {
             const imported = JSON.parse(reader.result);
-            progress = imported;
+            progress = {
+                items: imported.items || {},
+                reviews: imported.reviews || 0,
+                correct: imported.correct || 0,
+                daily: imported.daily || {},
+                trouble: imported.trouble || {}
+            };
             saveProgress(progress);
             showModal("Progress imported successfully!");
         } catch {
@@ -640,8 +647,16 @@ document.getElementById("resetBack").addEventListener("click", () => {
    ------------------------------ */
 
 async function initApp() {
-    const saved = await loadProgress();
-    if (saved) progress = saved;
+    const saved = await loadProgress().catch(() => null);
+    if (saved) {
+        progress = {
+            items: saved.items || {},
+            reviews: saved.reviews || 0,
+            correct: saved.correct || 0,
+            daily: saved.daily || {},
+            trouble: saved.trouble || {}
+        };
+    }
     showScreen("onboarding");
 }
 

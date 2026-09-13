@@ -2402,12 +2402,12 @@ const data = [
     },
     {
         id: 241,
-        traditional: "覺得",
-        pinyin: "juéde",
-        english: "to think / to feel",
-        example: "我覺得這件衣服很好看。",
-        translation: "I think this piece of clothing looks nice.",
-        clue: "Opinion"
+        traditional: "退貨",
+        pinyin: "tuìhuò",
+        english: "to return an item",
+        example: "這件衣服太小了，我要退貨。",
+        translation: "This piece of clothing is too small, I want to return it.",
+        clue: "Shopping"
     },
 
     {
@@ -2682,12 +2682,12 @@ const data = [
 
     {
         id: 269,
-        traditional: "需要",
-        pinyin: "xūyào",
-        english: "to need",
-        example: "我需要休息一下。",
-        translation: "I need to rest a bit.",
-        clue: "Basic verb"
+        traditional: "匯率",
+        pinyin: "huìlǜ",
+        english: "exchange rate",
+        example: "今天的匯率不太好。",
+        translation: "Today's exchange rate isn't very good.",
+        clue: "Finance"
     },
 
     {
@@ -3270,12 +3270,12 @@ const data = [
 
     {
         id: 328,
-        traditional: "晴天",
-        pinyin: "qíngtiān",
-        english: "sunny day",
-        example: "今天是晴天。",
-        translation: "Today is a sunny day.",
-        clue: "Weather"
+        traditional: "密碼",
+        pinyin: "mìmǎ",
+        english: "password",
+        example: "我忘記手機密碼了。",
+        translation: "I forgot my phone password.",
+        clue: "Technology"
     },
 
     {
@@ -3549,12 +3549,12 @@ const data = [
 
     {
         id: 356,
-        traditional: "地圖",
-        pinyin: "dìtú",
-        english: "map",
-        example: "我用地圖找路。",
-        translation: "I use a map to find the way.",
-        clue: "Navigation"
+        traditional: "插座",
+        pinyin: "chāzuò",
+        english: "electrical outlet",
+        example: "這個房間沒有插座。",
+        translation: "This room doesn't have an outlet.",
+        clue: "Object"
     },
 
     {
@@ -3569,12 +3569,12 @@ const data = [
 
     {
         id: 358,
-        traditional: "方向",
-        pinyin: "fāngxiàng",
-        english: "direction",
-        example: "你知道方向嗎？",
-        translation: "Do you know the direction?",
-        clue: "Navigation"
+        traditional: "充電器",
+        pinyin: "chōngdiànqì",
+        english: "charger",
+        example: "我忘記帶手機充電器了。",
+        translation: "I forgot to bring my phone charger.",
+        clue: "Technology"
     },
 
     {
@@ -3898,32 +3898,32 @@ const data = [
     },
     {
         id: 391,
-        traditional: "工作",
-        pinyin: "gōngzuò",
-        english: "work / job",
-        example: "我的工作很忙。",
-        translation: "My job is very busy.",
-        clue: "Work"
+        traditional: "廟",
+        pinyin: "miào",
+        english: "temple",
+        example: "這附近有一間很有名的廟。",
+        translation: "There's a famous temple nearby.",
+        clue: "Place"
     },
 
     {
         id: 392,
-        traditional: "上班",
-        pinyin: "shàngbān",
-        english: "to go to work",
-        example: "我每天八點上班。",
-        translation: "I go to work at eight every day.",
-        clue: "Work"
+        traditional: "加油站",
+        pinyin: "jiāyóuzhàn",
+        english: "gas station",
+        example: "摩托車快沒油了，我們去加油站。",
+        translation: "The motorcycle is almost out of gas, let's go to the gas station.",
+        clue: "Place"
     },
 
     {
         id: 393,
-        traditional: "下班",
-        pinyin: "xiàbān",
-        english: "to finish work",
-        example: "我六點下班。",
-        translation: "I finish work at six.",
-        clue: "Work"
+        traditional: "停電",
+        pinyin: "tíngdiàn",
+        english: "power outage",
+        example: "昨天晚上停電了。",
+        translation: "There was a power outage last night.",
+        clue: "Daily life"
     },
 
     {
@@ -3998,12 +3998,12 @@ const data = [
 
     {
         id: 401,
-        traditional: "學校",
-        pinyin: "xuéxiào",
-        english: "school",
-        example: "我在學校上課。",
-        translation: "I attend class at school.",
-        clue: "School"
+        traditional: "鄰居",
+        pinyin: "línjū",
+        english: "neighbor",
+        example: "我的鄰居很友善。",
+        translation: "My neighbor is very friendly.",
+        clue: "People"
     },
 
     {
@@ -4018,22 +4018,22 @@ const data = [
 
     {
         id: 403,
-        traditional: "老師",
-        pinyin: "lǎoshī",
-        english: "teacher",
-        example: "老師很親切。",
-        translation: "The teacher is very kind.",
-        clue: "School"
+        traditional: "拜拜",
+        pinyin: "bàibài",
+        english: "to worship / pray",
+        example: "過年的時候我們會去廟裡拜拜。",
+        translation: "During Chinese New Year we go pray at the temple.",
+        clue: "Culture"
     },
 
     {
         id: 404,
-        traditional: "同學",
-        pinyin: "tóngxué",
-        english: "classmate",
-        example: "我跟同學一起讀書。",
-        translation: "I study together with my classmates.",
-        clue: "School"
+        traditional: "紅包",
+        pinyin: "hóngbāo",
+        english: "red envelope",
+        example: "過年的時候長輩會給紅包。",
+        translation: "During Chinese New Year, elders give red envelopes.",
+        clue: "Culture"
     },
 
     {
@@ -4118,12 +4118,12 @@ const data = [
 
     {
         id: 413,
-        traditional: "練習",
-        pinyin: "liànxí",
-        english: "to practice",
-        example: "我每天練習中文。",
-        translation: "I practice Chinese every day.",
-        clue: "Study"
+        traditional: "客服",
+        pinyin: "kèfú",
+        english: "customer service",
+        example: "有問題可以打電話給客服。",
+        translation: "If you have a problem, you can call customer service.",
+        clue: "Shopping"
     },
 
     {
@@ -4138,22 +4138,22 @@ const data = [
 
     {
         id: 415,
-        traditional: "手機",
-        pinyin: "shǒujī",
-        english: "mobile phone",
-        example: "我的手機沒電了。",
-        translation: "My phone has no battery.",
-        clue: "Technology"
+        traditional: "過年",
+        pinyin: "guònián",
+        english: "Chinese New Year",
+        example: "我們全家過年都會團聚。",
+        translation: "Our whole family gets together for Chinese New Year.",
+        clue: "Holiday"
     },
 
     {
         id: 416,
-        traditional: "電腦",
-        pinyin: "diànnǎo",
-        english: "computer",
-        example: "我用電腦工作。",
-        translation: "I use a computer for work.",
-        clue: "Technology"
+        traditional: "中秋節",
+        pinyin: "Zhōngqiūjié",
+        english: "Mid-Autumn Festival",
+        example: "中秋節我們會烤肉、賞月。",
+        translation: "During the Mid-Autumn Festival we barbecue and admire the moon.",
+        clue: "Holiday"
     },
 
     {
@@ -4328,22 +4328,22 @@ const data = [
 
     {
         id: 434,
-        traditional: "郵局",
-        pinyin: "yóujú",
-        english: "post office",
-        example: "我去郵局寄信。",
-        translation: "I’m going to the post office to send a letter.",
-        clue: "Place"
+        traditional: "房東",
+        pinyin: "fángdōng",
+        english: "landlord",
+        example: "房東人很好。",
+        translation: "The landlord is very nice.",
+        clue: "Housing"
     },
 
     {
         id: 435,
-        traditional: "銀行",
-        pinyin: "yínháng",
-        english: "bank",
-        example: "我去銀行領錢。",
-        translation: "I’m going to the bank to withdraw money.",
-        clue: "Place"
+        traditional: "房租",
+        pinyin: "fángzū",
+        english: "rent",
+        example: "這個月的房租還沒付。",
+        translation: "This month's rent hasn't been paid yet.",
+        clue: "Housing"
     },
 
     {
@@ -4358,32 +4358,32 @@ const data = [
 
     {
         id: 437,
-        traditional: "信用卡",
-        pinyin: "xìnyòngkǎ",
-        english: "credit card",
-        example: "我用信用卡付錢。",
-        translation: "I pay with a credit card.",
-        clue: "Finance"
+        traditional: "珍珠奶茶",
+        pinyin: "zhēnzhū nǎichá",
+        english: "bubble tea",
+        example: "我最喜歡喝珍珠奶茶。",
+        translation: "I like drinking bubble tea the most.",
+        clue: "Food"
     },
 
     {
         id: 438,
-        traditional: "現金",
-        pinyin: "xiànjīn",
-        english: "cash",
-        example: "這家店只收現金。",
-        translation: "This store only accepts cash.",
-        clue: "Finance"
+        traditional: "泡麵",
+        pinyin: "pàomiàn",
+        english: "instant noodles",
+        example: "半夜肚子餓，我常常煮泡麵。",
+        translation: "When I'm hungry at midnight, I often make instant noodles.",
+        clue: "Food"
     },
 
     {
         id: 439,
-        traditional: "零錢",
-        pinyin: "língqián",
-        english: "coins / change",
-        example: "我沒有零錢。",
-        translation: "I don’t have any coins.",
-        clue: "Finance"
+        traditional: "悠閒",
+        pinyin: "yōuxián",
+        english: "leisurely / relaxed",
+        example: "週末的下午很悠閒。",
+        translation: "Weekend afternoons are very relaxing.",
+        clue: "Description"
     },
 
     {
@@ -4398,32 +4398,32 @@ const data = [
 
     {
         id: 441,
-        traditional: "便宜",
-        pinyin: "piányí",
-        english: "cheap",
-        example: "這件衣服很便宜。",
-        translation: "This clothing is very cheap.",
-        clue: "Shopping"
+        traditional: "大樓",
+        pinyin: "dàlóu",
+        english: "building",
+        example: "這棟大樓有二十層樓。",
+        translation: "This building has twenty floors.",
+        clue: "Place"
     },
 
     {
         id: 442,
-        traditional: "貴",
-        pinyin: "guì",
-        english: "expensive",
-        example: "這家餐廳有點貴。",
-        translation: "This restaurant is a bit expensive.",
-        clue: "Shopping"
+        traditional: "電梯",
+        pinyin: "diàntī",
+        english: "elevator",
+        example: "電梯壞了，我們走樓梯吧。",
+        translation: "The elevator is broken, let's take the stairs.",
+        clue: "Object"
     },
 
     {
         id: 443,
-        traditional: "打折",
-        pinyin: "dǎzhé",
-        english: "discount",
-        example: "今天打八折。",
-        translation: "Today is 20% off.",
-        clue: "Shopping"
+        traditional: "樓梯",
+        pinyin: "lóutī",
+        english: "stairs",
+        example: "我每天爬樓梯運動。",
+        translation: "I climb the stairs every day for exercise.",
+        clue: "Object"
     },
 
     {
@@ -4478,12 +4478,12 @@ const data = [
 
     {
         id: 449,
-        traditional: "洗澡",
-        pinyin: "xǐzǎo",
-        english: "to shower",
-        example: "我每天洗澡。",
-        translation: "I shower every day.",
-        clue: "Daily routine"
+        traditional: "颱風假",
+        pinyin: "táifēngjià",
+        english: "typhoon day off",
+        example: "明天可能會放颱風假。",
+        translation: "We might get a typhoon day off tomorrow.",
+        clue: "Weather"
     },
 
     {
@@ -4668,22 +4668,22 @@ const data = [
 
     {
         id: 468,
-        traditional: "剛剛",
-        pinyin: "gānggāng",
-        english: "just now",
-        example: "我剛剛到家。",
-        translation: "I just got home.",
-        clue: "Time"
+        traditional: "自拍",
+        pinyin: "zìpāi",
+        english: "to take a selfie",
+        example: "我們在夜市自拍了很多照片。",
+        translation: "We took a lot of selfies at the night market.",
+        clue: "Technology"
     },
 
     {
         id: 469,
-        traditional: "突然",
-        pinyin: "tūrán",
-        english: "suddenly",
-        example: "雨突然下得很大。",
-        translation: "The rain suddenly became heavy.",
-        clue: "Weather"
+        traditional: "直播",
+        pinyin: "zhíbò",
+        english: "live stream",
+        example: "他每天晚上都會直播。",
+        translation: "He live streams every night.",
+        clue: "Technology"
     },
 
     {
@@ -4758,122 +4758,122 @@ const data = [
 
     {
         id: 477,
-        traditional: "一定",
-        pinyin: "yídìng",
-        english: "definitely",
-        example: "你一定可以做到。",
-        translation: "You can definitely do it.",
-        clue: "Grammar"
+        traditional: "隱形眼鏡",
+        pinyin: "yǐnxíng yǎnjìng",
+        english: "contact lenses",
+        example: "我戴隱形眼鏡不戴眼鏡。",
+        translation: "I wear contact lenses instead of glasses.",
+        clue: "Object"
     },
 
     {
         id: 478,
-        traditional: "可能",
-        pinyin: "kěnéng",
-        english: "maybe / possibly",
-        example: "他可能不來。",
-        translation: "He might not come.",
-        clue: "Grammar"
+        traditional: "掛號",
+        pinyin: "guàhào",
+        english: "to register (at a clinic)",
+        example: "我先去掛號才能看醫生。",
+        translation: "I need to register first before I can see the doctor.",
+        clue: "Health"
     },
 
     {
         id: 479,
-        traditional: "應該",
-        pinyin: "yīnggāi",
-        english: "should",
-        example: "你應該多休息。",
-        translation: "You should rest more.",
-        clue: "Grammar"
+        traditional: "打針",
+        pinyin: "dǎzhēn",
+        english: "to get an injection",
+        example: "護士幫我打針。",
+        translation: "The nurse gave me an injection.",
+        clue: "Health"
     },
 
     {
         id: 480,
-        traditional: "必須",
-        pinyin: "bìxū",
-        english: "must",
-        example: "你必須準時到。",
-        translation: "You must arrive on time.",
-        clue: "Grammar"
+        traditional: "過敏",
+        pinyin: "guòmǐn",
+        english: "allergy",
+        example: "我對花生過敏。",
+        translation: "I'm allergic to peanuts.",
+        clue: "Health"
     },
 
     {
         id: 481,
-        traditional: "需要",
-        pinyin: "xūyào",
-        english: "to need",
-        example: "我需要你的幫忙。",
-        translation: "I need your help.",
-        clue: "Grammar"
+        traditional: "保險",
+        pinyin: "bǎoxiǎn",
+        english: "insurance",
+        example: "我有買健康保險。",
+        translation: "I have health insurance.",
+        clue: "Finance"
     },
 
     {
         id: 482,
-        traditional: "可以",
-        pinyin: "kěyǐ",
-        english: "can / may",
-        example: "我可以進來嗎？",
-        translation: "May I come in?",
-        clue: "Grammar"
+        traditional: "悠遊卡",
+        pinyin: "yōuyóukǎ",
+        english: "EasyCard (transit card)",
+        example: "我用悠遊卡搭捷運。",
+        translation: "I use an EasyCard to take the MRT.",
+        clue: "Transportation"
     },
 
     {
         id: 483,
-        traditional: "不能",
-        pinyin: "bùnéng",
-        english: "cannot",
-        example: "這裡不能抽菸。",
-        translation: "You cannot smoke here.",
-        clue: "Grammar"
+        traditional: "摩托車",
+        pinyin: "mótuōchē",
+        english: "motorcycle",
+        example: "台灣人常騎摩托車上班。",
+        translation: "Taiwanese people often ride motorcycles to work.",
+        clue: "Transportation"
     },
 
     {
         id: 484,
-        traditional: "重要",
-        pinyin: "zhòngyào",
-        english: "important",
-        example: "這件事很重要。",
-        translation: "This matter is important.",
-        clue: "Description"
+        traditional: "時差",
+        pinyin: "shíchā",
+        english: "jet lag / time difference",
+        example: "我剛下飛機，還有時差。",
+        translation: "I just got off the plane and still have jet lag.",
+        clue: "Travel"
     },
 
     {
         id: 485,
-        traditional: "方便",
-        pinyin: "fāngbiàn",
-        english: "convenient",
-        example: "住在市中心很方便。",
-        translation: "Living in the city center is convenient.",
-        clue: "Description"
+        traditional: "下載",
+        pinyin: "xiàzài",
+        english: "to download",
+        example: "我在下載一個新的應用程式。",
+        translation: "I'm downloading a new app.",
+        clue: "Technology"
     },
 
     {
         id: 486,
-        traditional: "麻煩",
-        pinyin: "máfan",
-        english: "troublesome",
-        example: "這件事有點麻煩。",
-        translation: "This matter is a bit troublesome.",
-        clue: "Description"
+        traditional: "上傳",
+        pinyin: "shàngchuán",
+        english: "to upload",
+        example: "我把照片上傳到網路上。",
+        translation: "I uploaded the photos online.",
+        clue: "Technology"
     },
 
     {
         id: 487,
-        traditional: "簡單",
-        pinyin: "jiǎndān",
-        english: "simple",
-        example: "這個問題很簡單。",
-        translation: "This question is simple.",
-        clue: "Description"
+        traditional: "觀光",
+        pinyin: "guānguāng",
+        english: "sightseeing",
+        example: "很多人來台灣觀光。",
+        translation: "Many people come to Taiwan for sightseeing.",
+        clue: "Travel"
     },
 
     {
         id: 488,
-        traditional: "複雜",
-        pinyin: "fùzá",
-        english: "complicated",
-        example: "這件事很複雜。",
-        translation: "This matter is complicated.",
-        clue: "Description"
+        traditional: "景點",
+        pinyin: "jǐngdiǎn",
+        english: "tourist attraction",
+        example: "九份是很有名的景點。",
+        translation: "Jiufen is a very famous tourist attraction.",
+        clue: "Travel"
     },
 
     {
@@ -4898,48 +4898,51 @@ const data = [
 
     {
         id: 491,
-        traditional: "舒服",
-        pinyin: "shūfu",
-        english: "comfortable",
-        example: "這張椅子很舒服。",
-        translation: "This chair is very comfortable.",
-        clue: "Description"
+        traditional: "伴手禮",
+        pinyin: "bànshǒulǐ",
+        english: "souvenir gift",
+        example: "我買了鳳梨酥當伴手禮。",
+        translation: "I bought pineapple cakes as a souvenir gift.",
+        clue: "Travel"
     },
 
     {
         id: 492,
-        traditional: "不舒服",
-        pinyin: "bù shūfu",
-        english: "uncomfortable / unwell",
-        example: "我今天有點不舒服。",
-        translation: "I feel a bit unwell today.",
-        clue: "Description"
+        traditional: "簽證",
+        pinyin: "qiānzhèng",
+        english: "visa",
+        example: "去有些國家需要簽證。",
+        translation: "You need a visa to go to some countries.",
+        clue: "Travel"
     },
 
     {
         id: 493,
-        traditional: "開心",
-        pinyin: "kāixīn",
-        english: "happy",
-        example: "我今天很開心。",
-        translation: "I’m very happy today.",
-        clue: "Emotion"
+        traditional: "登機",
+        pinyin: "dēngjī",
+        english: "to board a plane",
+        example: "我們準備要登機了。",
+        translation: "We're getting ready to board the plane.",
+        clue: "Travel"
     },
 
     {
         id: 494,
-        traditional: "難過",
-        pinyin: "nánguò",
-        english: "sad",
-        example: "他看起來很難過。",
-        translation: "He looks very sad.",
-        clue: "Emotion"
+        traditional: "行李箱",
+        pinyin: "xínglixiāng",
+        english: "suitcase",
+        example: "我的行李箱太重了。",
+        translation: "My suitcase is too heavy.",
+        clue: "Travel"
     },
 
     {
         id: 495,
-        traditional: "生氣",
-        pinyin: "shēngqì",
-        english: "angry",
+        traditional: "宵夜",
+        pinyin: "xiāoyè",
+        english: "late-night snack",
+        example: "台灣人很喜歡吃宵夜。",
+        translation: "Taiwanese people love eating late-night snacks.",
+        clue: "Food"
     }
     ];
