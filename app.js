@@ -9,7 +9,7 @@
 const screens = {
     onboarding: document.getElementById("onboarding"),
     study: document.getElementById("studyScreen"),
-    menu: document.getElementById("menuScreen"),
+    menu: document.getElementById("menu"),
     progress: document.getElementById("progressScreen"),
     deck: document.getElementById("deckScreen"),
     import: document.getElementById("importScreen"),
@@ -238,9 +238,10 @@ function startStudySession() {
         return;
     }
 
-    showScreen("study");
+    showScreen("studyScreen");
     loadNextItem();
 }
+
 
 /* ------------------------------
    Load Next Item
