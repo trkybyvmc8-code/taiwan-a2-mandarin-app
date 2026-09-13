@@ -507,7 +507,7 @@ document.getElementById("deckSearch").addEventListener("input", (e) => {
    Import Progress
    ------------------------------ */
 
-document.getElementById("importBtn").addEventListener("click", () => {
+document.getElementById("importConfirmBtn").addEventListener("click", () => {
     const fileInput = document.getElementById("importFile");
     const file = fileInput.files[0];
 
