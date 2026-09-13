@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan A2 Mandarin Study</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="app">
+
+    <!-- Onboarding Screen -->
+    <section id="onboarding" class="screen active">
+        <h1>Taiwan A2 Mandarin</h1>
+        <p class="intro-text">
+            This app helps you learn Traditional Chinese vocabulary using
+            active recall, contextual clues, and spaced repetition.
+        </p>
+        <button id="startOnboardingBtn">Start</button>
+    </section>
+
+    <!-- Study Screen -->
+    <section id="studyScreen" class="screen hidden">
+        <header class="top-bar">
+            <div id="sessionInfo">Loading session…</div>
+            <button id="goToMenu" class="menu-btn">☰</button>
+        </header>
+
+        <div id="studyContent">
+            <div id="targetWord" class="big-chinese"></div>
+
+            <div id="exampleSentence" class="example-sentence"></div>
+
+            <div id="clueBox" class="clue-box hidden"></div>
+
+            <button id="clueBtn" class="secondary-btn">💡 Give me a clue</button>
+            <button id="revealBtn" class="primary-btn">Reveal pinyin + meaning</button>
+
+            <div id="answerBox" class="answer-box hidden">
+                <div id="pinyin" class="pinyin"></div>
+                <div id="meaning" class="meaning"></div>
+                <div id="sentenceReveal" class="sentence-reveal"></div>
+                <div id="translation" class="translation"></div>
+            </div>
+
+            <div id="ratingButtons" class="rating-buttons hidden">
+                <button class="rate-btn again" data-rating="again">Again</button>
+                <button class="rate-btn hard" data-rating="hard">Hard</button>
+                <button class="rate-btn good" data-rating="good">Good</button>
+                <button class="rate-btn easy" data-rating="easy">Easy</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Screen -->
+    <section id="menuScreen" class="screen hidden">
+        <h2>Menu</h2>
+        <button class="menu-item" id="menuStudy">Study</button>
+        <button class="menu-item" id="menuProgress">Progress</button>
+        <button class="menu-item" id="menuDeck">Vocabulary Deck</button>
+        <button class="menu-item" id="menuImport">Import Progress</button>
+        <button class="menu-item" id="menuExport">Export Progress</button>
+        <button class="menu-item danger" id="menuReset">Reset Progress</button>
+        <button class="menu-item" id="menuBack">Back</button>
+    </section>
+
+    <!-- Progress Screen -->
+    <section id="progressScreen" class="screen hidden">
+        <h2>Your Progress</h2>
+
+        <div class="progress-summary">
+            <div>Total items: <span id="statTotal"></span></div>
+            <div>Seen: <span id="statSeen"></span></div>
+            <div>Mastered: <span id="statMastered"></span></div>
+            <div>Due now: <span id="statDue"></span></div>
+            <div>Total reviews: <span id="statReviews"></span></div>
+            <div>Accuracy: <span id="statAccuracy"></span>%</div>
+        </div>
+
+        <h3>Daily Activity (last 14 days)</h3>
+        <table id="dailyTable" class="daily-table"></table>
+
+        <h3>Trouble Words</h3>
+        <div id="troubleList" class="trouble-list"></div>
+
+        <button class="menu-item" id="progressBack">Back</button>
+    </section>
+
+    <!-- Deck Screen -->
+    <section id="deckScreen" class="screen hidden">
+        <h2>Vocabulary Deck</h2>
+
+        <input id="deckSearch" type="text" placeholder="Search Traditional, pinyin, or English…">
+
+        <div id="deckList" class="deck-list"></div>
+
+        <button class="menu-item" id="deckBack">Back</button>
+    </section>
+
+    <!-- Import Screen -->
+    <section id="importScreen" class="screen hidden">
+        <h2>Import Progress</h2>
+        <input type="file" id="importFile">
+        <button id="importBtn" class="primary-btn">Import</button>
+        <button class="menu-item" id="importBack">Back</button>
+    </section>
+
+    <!-- Reset Confirmation -->
+    <section id="resetScreen" class="screen hidden">
+        <h2>Reset Progress</h2>
+        <p>This will erase all your study data. Are you sure?</p>
+        <button id="confirmReset" class="danger-btn">Yes, reset everything</button>
+        <button id="resetBack" class="menu-item">Cancel</button>
+    </section>
+
+</div>
+
+</body>
+</html>
+<!-- Navigation Overlay -->
+<div id="navOverlay" class="overlay hidden">
+    <div class="overlay-content">
+        <button class="overlay-item" id="navStudy">Study</button>
+        <button class="overlay-item" id="navProgress">Progress</button>
+        <button class="overlay-item" id="navDeck">Vocabulary Deck</button>
+        <button class="overlay-item" id="navImport">Import Progress</button>
+        <button class="overlay-item" id="navExport">Export Progress</button>
+        <button class="overlay-item danger" id="navReset">Reset Progress</button>
+        <button class="overlay-item" id="navClose">Close</button>
+    </div>
+</div>
+
+<!-- Export Screen -->
+<section id="exportScreen" class="screen hidden">
+    <h2>Export Progress</h2>
+    <p>Your study data will be downloaded as a JSON file.</p>
+    <button id="exportBtn" class="primary-btn">Download Progress</button>
+    <button class="menu-item" id="exportBack">Back</button>
+</section>
+
+<!-- Hidden download link -->
+<a id="downloadLink" style="display:none;"></a>
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="spinner hidden">
+    <div class="spinner-circle"></div>
+</div>
+
+<!-- Footer -->
+<footer id="footer">
+    <p>Traditional Chinese • Taiwan A2 Level • Spaced Repetition</p>
+</footer>
+<!-- Modal for messages -->
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <p id="modalText"></p>
+        <button id="modalClose" class="primary-btn">OK</button>
+    </div>
+</div>
+
+<!-- Hidden templates (used by JS) -->
+<template id="deckItemTemplate">
+    <div class="deck-item">
+        <div class="deck-chinese"></div>
+        <div class="deck-pinyin"></div>
+        <div class="deck-english"></div>
+        <div class="deck-status"></div>
+    </div>
+</template>
+
+<template id="troubleItemTemplate">
+    <div class="trouble-item">
+        <div class="trouble-chinese"></div>
+        <div class="trouble-pinyin"></div>
+        <div class="trouble-english"></div>
+        <div class="trouble-rate"></div>
+        <div class="trouble-interval"></div>
+    </div>
+</template>
+
+<script src="data.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
+
+
