@@ -8,32 +8,19 @@
 
 const screens = {
     onboarding: document.getElementById("onboarding"),
-    study: document.getElementById("studyScreen"),
+    studyScreen: document.getElementById("studyScreen"),
     menu: document.getElementById("menu"),
-    progress: document.getElementById("progressScreen"),
-    deck: document.getElementById("deckScreen"),
-    import: document.getElementById("importScreen"),
-    export: document.getElementById("exportScreen"),
-    reset: document.getElementById("resetScreen")
+    progressScreen: document.getElementById("progressScreen"),
+    deckScreen: document.getElementById("deckScreen"),
+    settingsScreen: document.getElementById("settingsScreen"),
+    importScreen: document.getElementById("importScreen"),
+    exportScreen: document.getElementById("exportScreen"),
+    resetScreen: document.getElementById("resetScreen")
 };
 
 function showScreen(name) {
     Object.values(screens).forEach(s => s.classList.add("hidden"));
     screens[name].classList.remove("hidden");
-}
-
-/* ------------------------------
-   Navigation Overlay
-   ------------------------------ */
-
-const navOverlay = document.getElementById("navOverlay");
-
-function openNav() {
-    navOverlay.classList.remove("hidden");
-}
-
-function closeNav() {
-    navOverlay.classList.add("hidden");
 }
 
 /* ------------------------------
@@ -112,7 +99,7 @@ async function loadProgress() {
    Global State
    ------------------------------ */
 
-let progress = loadProgress() || {
+let progress = {
     items: {},          // per‑item SRS data
     reviews: 0,         // total reviews
     correct: 0,         // correct answers
@@ -147,20 +134,6 @@ document.getElementById("openSettings").addEventListener("click", () => {
     showScreen("settingsScreen");
 });
 
-document.getElementById("menuContinueBtn").addEventListener("click", () => {
-    startStudySession();
-    showScreen("studyScreen");
-});
-
-
-/* ------------------------------
-   Menu → Settings Navigation
-   ------------------------------ */
-
-document.getElementById("menuSettingsBtn").addEventListener("click", () => {
-    showScreen("settingsScreen");
-});
-
 document.getElementById("settingsBackBtn").addEventListener("click", () => {
     showScreen("menu");
 });
@@ -168,6 +141,14 @@ document.getElementById("settingsBackBtn").addEventListener("click", () => {
 document.querySelectorAll("#bottomNav .nav-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const target = btn.dataset.target;
+
+        if (target === "studyScreen") {
+            startStudySession();
+            return;
+        }
+        if (target === "deckScreen") loadDeckScreen();
+        if (target === "progressScreen") loadProgressScreen();
+
         showScreen(target);
     });
 });
@@ -601,11 +582,24 @@ document.getElementById("menuProgressBtn").addEventListener("click", () => {
 });
 
 document.getElementById("menuTroubleBtn").addEventListener("click", () => {
-    showScreen("troubleScreen");
+    loadProgressScreen();
+    showScreen("progressScreen");
 });
 
 document.getElementById("menuSettingsBtn").addEventListener("click", () => {
     showScreen("settingsScreen");
+});
+
+document.getElementById("settingsImportBtn").addEventListener("click", () => {
+    showScreen("importScreen");
+});
+
+document.getElementById("settingsExportBtn").addEventListener("click", () => {
+    showScreen("exportScreen");
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+    showScreen("resetScreen");
 });
 
 
@@ -645,7 +639,13 @@ document.getElementById("resetBack").addEventListener("click", () => {
    Initial Load
    ------------------------------ */
 
-showScreen("onboarding");
+async function initApp() {
+    const saved = await loadProgress();
+    if (saved) progress = saved;
+    showScreen("onboarding");
+}
+
+initApp();
 
 /* ------------------------------
    PWA — Service Worker Registration
@@ -654,4 +654,3 @@ showScreen("onboarding");
 if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("sw.js");
 }
-
